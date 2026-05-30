@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Felices 8 Meses, Mi Vida 💜</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <canvas id="star-canvas"></canvas>
+
+    <div id="flower-container"></div>
+
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <clipPath id="clip-heart" clipPathUnits="objectBoundingBox">
+                <path
+                    d="M0.5,0.9 C0.5,0.9 0,0.6 0,0.3 C0,0.1 0.25,0 0.4,0.1 C0.45,0.15 0.5,0.2 0.5,0.2 C0.5,0.2 0.55,0.15 0.6,0.1 C0.75,0 1,0.1 1,0.3 C1,0.6 0.5,0.9 0.5,0.9 Z" />
+            </clipPath>
+            <clipPath id="clip-star" clipPathUnits="objectBoundingBox">
+                <path
+                    d="M 0.5 0.05 C 0.51 0.02, 0.53 0.02, 0.54 0.05 L 0.63 0.31 C 0.64 0.33, 0.66 0.34, 0.69 0.34 L 0.96 0.36 C 0.99 0.36, 1 0.39, 0.98 0.41 L 0.76 0.61 C 0.75 0.62, 0.74 0.64, 0.75 0.67 L 0.81 0.94 C 0.82 0.97, 0.79 0.99, 0.77 0.97 L 0.52 0.83 C 0.51 0.82, 0.49 0.82, 0.48 0.83 L 0.23 0.97 C 0.21 0.99, 0.18 0.97, 0.19 0.94 L 0.25 0.67 C 0.26 0.64, 0.25 0.62, 0.24 0.61 L 0.02 0.41 C 0 0.39, 0.01 0.36, 0.04 0.36 L 0.31 0.34 C 0.34 0.34, 0.36 0.33, 0.37 0.31 Z" />
+            </clipPath>
+            <clipPath id="clip-triangle" clipPathUnits="objectBoundingBox">
+                <path
+                    d="M 0.57 0.15 L 0.93 0.77 Q 0.97 0.85 0.88 0.85 L 0.12 0.85 Q 0.03 0.85 0.07 0.77 L 0.43 0.15 Q 0.5 0.02 0.57 0.15 Z" />
+            </clipPath>
+        </defs>
+    </svg>
+
+    <div class="container">
+        <header>
+            <h1>Felices 8 Meses, Mi Vida</h1>
+            <p class="subtitle">"Contigo cada amanecer tiene un propósito..."</p>
+
+            <div class="counter-container">
+                <div class="counter-box"><span class="counter-number" id="c-meses">00</span><span
+                        class="counter-label">Meses</span></div>
+                <div class="counter-box"><span class="counter-number" id="c-dias">00</span><span
+                        class="counter-label">Días</span></div>
+                <div class="counter-box"><span class="counter-number" id="c-horas">00</span><span
+                        class="counter-label">Horas</span></div>
+                <div class="counter-box"><span class="counter-number" id="c-min">00</span><span
+                        class="counter-label">Min</span></div>
+                <div class="counter-box"><span class="counter-number" id="c-seg">00</span><span
+                        class="counter-label">Seg</span></div>
+            </div>
+        </header>
+
+        <section id="carta" class="fade-in-section">
+            <h2>Nuestra Historia</h2>
+            <div class="carta-contenido">
+                <p class="carta-p">Para ti, mi vida</p>
+                <p class="carta-p">Mi ñoñita preciosha, única en el mundo como lo es la primera estrella que se enciende
+                    al caer la noche — eres tú, siempre tú. Contigo quiero estar, contigo es con quien me quiero quedar,
+                    porque en ti encontré el lugar al que siempre quise llegar.</p>
+                <p class="carta-p">No me dejes nunca, mi amor, yo te necesito — quizás no para respirar, quizás no para
+                    sobrevivir, pero sí para vivir por completo, para sentir que cada amanecer tiene un propósito, que
+                    cada latido tiene un nombre: el tuyo.</p>
+                <p class="carta-p">Contigo todo cobra sentido, como cuando la lluvia da sentido al calor, como cuando la
+                    luna da sentido al mar. Todo es profundamente más cálido a tu lado, como si el mundo entero hubiera
+                    bajado la guardia y decidido por fin volverse hogar. Eres mi complemento — todo aquello que me hace
+                    feliz y me da aliento — porque tú me brindas todo: llenas de dicha y buena nueva mi alma, me
+                    completas y siempre me llenas de calma.</p>
+                <p class="carta-p">Te amo, mi bebeshita boñita — es lo único que puedo decirte para tratar de encapsular
+                    todo lo que siento por ti. Pero incluso un "te amo" se queda corto, como un vaso pequeño tratando de
+                    contener el océano. Las palabras son apenas sombras de lo que guardas en mí. Tú eres perfecta para
+                    mí, eres todo lo que siempre quise y quiero, la respuesta a preguntas que nunca supe formular. Soy
+                    muy afortunado de haberte conocido — de que el destino, o la vida, o algo más grande que yo, haya
+                    conspirado para ponerte aquí, a mi lado.</p>
+                <p class="carta-p">Te aprecio tanto, mi niñita preciosha, hermosha, maravillosha... Realmente significas
+                    tanto para mí que a veces me detengo en silencio solo para sentir el peso hermoso de tenerte. Nunca
+                    olvidaré aquel día en que te conocí — grabado en mí como la primera vez que ves el mar y entiendes
+                    que algo ha cambiado para siempre. Ni olvidaré aquel en que nos hicimos novios, hace ya ocho meses,
+                    este 29 de mayo: ocho meses que se sienten como una vida entera aprendida de nuevo, y al mismo
+                    tiempo como un suspiro que no quiero que termine.</p>
+                <p class="carta-p">Eres mi constante, mi norte, mi calma en el ruido. Y mientras el tiempo siga pasando,
+                    yo seguiré eligiéndote — hoy, mañana, y cada día que me quede por vivir.</p>
+            </div>
+        </section>
+
+        <section id="fotos" class="fade-in-section">
+            <h2>Nuestros Momentos</h2>
+
+            <div class="subseccion-titulo">Nosotros en nuestras casitas</div>
+            <div class="grid-galeria">
+                <div class="foto-card-wrapper"
+                    onclick="verImagen(this, 'images/casita_1.jpg', 'Nosotros en mi casita 1')">
+                    <div class="foto-card shape-square">
+                        <img src="images/casita_1.jpg" alt="Casita 1" onload="this.style.opacity=1;">
+                        <div class="placeholder-text">
+                            <div class="placeholder-icon">🧸</div><span>images/casita_1.jpg</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="foto-card-wrapper"
+                    onclick="verImagen(this, 'images/casita_2.jpg', 'Nosotros en mi casita 2')">
+                    <div class="foto-card shape-heart">
+                        <img src="images/casita_2.jpg" alt="Casita 2" onload="this.style.opacity=1;">
+                        <div class="placeholder-text">
+                            <div class="placeholder-icon">💜</div><span>images/casita_2.jpg</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="foto-card-wrapper"
+                    onclick="verImagen(this, 'images/casita_3.jpg', 'Nosotros en mi casita 3')">
+                    <div class="foto-card shape-star">
+                        <img src="images/casita_3.jpg" alt="Casita 3" onload="this.style.opacity=1;">
+                        <div class="placeholder-text">
+                            <div class="placeholder-icon">✨</div><span>images/casita_3.jpg</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="foto-card-wrapper"
+                    onclick="verImagen(this, 'images/casita_4.jpg', 'Nosotros en mi casita 4')">
+                    <div class="foto-card shape-triangle">
+                        <img src="images/casita_4.jpg" alt="Casita 4" onload="this.style.opacity=1;">
+                        <div class="placeholder-text">
+                            <div class="placeholder-icon">🏕️</div><span>images/casita_4.jpg</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="foto-card-wrapper"
+                    onclick="verImagen(this, 'images/casita_5.jpeg', 'Nosotros en mi casita 5')">
+                    <div class="foto-card shape-heart">
+                        <img src="images/casita_5.jpeg" alt="Casita 5" onload="this.style.opacity=1;">
+                        <div class="placeholder-text">
+                            <div class="placeholder-icon">💜</div><span>images/casita_5.jpeg</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="foto-card-wrapper"
+                    onclick="verImagen(this, 'images/casita_6.jpg', 'Nosotros en mi casita 6')">
+                    <div class="foto-card shape-square">
+                        <img src="images/casita_6.jpg" alt="Casita 6" onload="this.style.opacity=1;">
+                        <div class="placeholder-text">
+                            <div class="placeholder-icon">🎀</div><span>images/casita_6.jpg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subseccion-titulo">Momentos invaluables para mí:</div>
+            <div class="grid-galeria">
+                <div class="foto-card-wrapper"
+                    onclick="verImagen(this, 'images/momento_1.jpg', 'Momento invaluable 1')">
+                    <div class="foto-card shape-star">
+                        <img src="images/momento_1.jpg" alt="Momento 1" onload="this.style.opacity=1;">
+                        <div class="placeholder-text">
+                            <div class="placeholder-icon">🌟</div><span>images/momento_1.jpg</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="foto-card-wrapper"
+                    onclick="verImagen(this, 'images/momento_2.jpg', 'Momento invaluable 2')">
+                    <div class="foto-card shape-square">
+                        <img src="images/momento_2.jpg" alt="Momento 2" onload="this.style.opacity=1;">
+                        <div class="placeholder-text">
+                            <div class="placeholder-icon">🧸</div><span>images/momento_2.jpg</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="foto-card-wrapper"
+                    onclick="verImagen(this, 'images/momento_3.jpg', 'Momento invaluable 3')">
+                    <div class="foto-card shape-triangle">
+                        <img src="images/momento_3.jpg" alt="Momento 3" onload="this.style.opacity=1;">
+                        <div class="placeholder-text">
+                            <div class="placeholder-icon">🏕️</div><span>images/momento_3.jpg</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="foto-card-wrapper"
+                    onclick="verImagen(this, 'images/momento_4.jpg', 'Momento invaluable 4')">
+                    <div class="foto-card shape-heart">
+                        <img src="images/momento_4.jpg" alt="Momento 4" onload="this.style.opacity=1;">
+                        <div class="placeholder-text">
+                            <div class="placeholder-icon">💜</div><span>images/momento_4.jpg</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="foto-card-wrapper"
+                    onclick="verImagen(this, 'images/momento_5.jpg', 'Momento invaluable 5')">
+                    <div class="foto-card shape-square">
+                        <img src="images/momento_5.jpg" alt="Momento 5" onload="this.style.opacity=1;">
+                        <div class="placeholder-text">
+                            <div class="placeholder-icon">🎀</div><span>images/momento_5.jpg</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="foto-card-wrapper"
+                    onclick="verImagen(this, 'images/momento_6.jpg', 'Momento invaluable 6')">
+                    <div class="foto-card shape-star">
+                        <img src="images/momento_6.jpg" alt="Momento 6" onload="this.style.opacity=1;">
+                        <div class="placeholder-text">
+                            <div class="placeholder-icon">✨</div><span>images/momento_6.jpg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subseccion-titulo">Mis fotos favoritas tuyas:</div>
+            <div class="grid-galeria">
+                <div class="foto-card-wrapper"
+                    onclick="verImagen(this, 'images/favorita_1.jpg', 'Mi favorita de ti 1')">
+                    <div class="foto-card shape-heart">
+                        <img src="images/favorita_1.jpg" alt="Favorita 1" onload="this.style.opacity=1;">
+                        <div class="placeholder-text">
+                            <div class="placeholder-icon">👑</div><span>images/favorita_1.jpg</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="foto-card-wrapper"
+                    onclick="verImagen(this, 'images/favorita_2.jpg', 'Mi favorita de ti 2')">
+                    <div class="foto-card shape-triangle">
+                        <img src="images/favorita_2.jpg" alt="Favorita 2" onload="this.style.opacity=1;">
+                        <div class="placeholder-text">
+                            <div class="placeholder-icon">🥰</div><span>images/favorita_2.jpg</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="foto-card-wrapper"
+                    onclick="verImagen(this, 'images/favorita_3.jpg', 'Mi favorita de ti 3')">
+                    <div class="foto-card shape-star">
+                        <img src="images/favorita_3.jpg" alt="Favorita 3" onload="this.style.opacity=1;">
+                        <div class="placeholder-text">
+                            <div class="placeholder-icon">🧚‍♀️</div><span>images/favorita_3.jpg</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="foto-card-wrapper"
+                    onclick="verImagen(this, 'images/favorita_4.jpg', 'Mi favorita de ti 4')">
+                    <div class="foto-card shape-square">
+                        <img src="images/favorita_4.jpg" alt="Favorita 4" onload="this.style.opacity=1;">
+                        <div class="placeholder-text">
+                            <div class="placeholder-icon">🌺</div><span>images/favorita_4.jpg</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="foto-card-wrapper"
+                    onclick="verImagen(this, 'images/favorita_5.jpg', 'Mi favorita de ti 5')">
+                    <div class="foto-card shape-heart">
+                        <img src="images/favorita_5.jpg" alt="Favorita 5" onload="this.style.opacity=1;">
+                        <div class="placeholder-text">
+                            <div class="placeholder-icon">💜</div><span>images/favorita_5.jpg</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="foto-card-wrapper"
+                    onclick="verImagen(this, 'images/favorita_6.jpeg', 'Mi favorita de ti 6')">
+                    <div class="foto-card shape-star">
+                        <img src="images/favorita_6.jpeg" alt="Favorita 6" onload="this.style.opacity=1;">
+                        <div class="placeholder-text">
+                            <div class="placeholder-icon">⭐</div><span>images/favorita_6.jpg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="carta-2" class="fade-in-section">
+            <h2>Te necesito, Reni</h2>
+            <div class="carta-contenido">
+                <p class="carta-p">Te necesito, Reni. Necesito tus abrazos como el árbol necesita la lluvia que lo
+                    empapa y lo devuelve a la vida. Necesito tus besos, esos que caen suaves sobre mí como pétalos que
+                    el viento arranca sin permiso, y tus caricias, que recorren mi piel como ríos que conocen de memoria
+                    el camino al mar. Necesito todo tu amor —ese amor tuyo, tan tuyo, tan mío—, porque en él me he
+                    convertido en alguien que finalmente sabe a qué sabe la paz.</p>
+                <p class="carta-p">Te necesito, mi ñoñita boñita, en quien he depositado mi confianza como se deposita
+                    una semilla en tierra fértil, sin saber exactamente cuándo florecerá, pero sabiendo con certeza que
+                    lo hará. Y has florecido. Y me has florecido a mí. Te has convertido en mi hogar: no esas cuatro
+                    paredes de madera y cemento, sino ese lugar sin coordenadas donde el alma suelta el peso y respira.
+                </p>
+                <p class="carta-p">Necesito tu cariño, bebeshita boñita. Me siento vulnerable, como una llama pequeña en
+                    un cuarto de ventanas abiertas, y aún así no me apago porque pienso en ti. Y contigo quiero estar.
+                    Contigo, en mi lugar seguro, donde el tiempo no duele y el mundo no pesa tanto. Donde soy feliz —y
+                    no de una felicidad prestada, sino de la que crece desde adentro, callada y firme, como raíz que no
+                    se ve pero que lo sostiene todo.</p>
+                <p class="carta-p">Te extraño, mi Reni linda. Te extraño con una intensidad que no cabe en una sola
+                    palabra —hay que derramarla, extenderla, dejarla manchar el papel. Extraño esos hermosos ojitos
+                    tuyos, oscuros y luminosos al mismo tiempo, como noche de estrellas que no necesita luna; esos ojos
+                    que cuando los veía sentía que estaba leyendo el único libro que valía la pena releer mil veces.
+                    Extraño tu dulce vocecita diciendo mi nombre como si fuera algo especial, como si al pronunciarlo lo
+                    rescatara de entre todas las palabras del mundo y le diera otro significado. Extraño cuando me
+                    decías cositas bonitas —esas palabras pequeñas que tenían el peso de montañas, la calidez de un sol
+                    de tarde.</p>
+                <p class="carta-p">Te extraño a ti, bebeshita preciosha, porque contigo todo es mejor: la mañana tiene
+                    otro color, el silencio tiene otra textura, incluso el aire parece más amable. Te amo tanto, mi
+                    dulce amor, que el amor mismo se me queda corto cuando intento nombrarlo.</p>
+                <p class="carta-p">Tengo una sensación extraña que no logra acomodarse del todo en el pecho, como algo
+                    que ocupa el espacio justo donde va el descanso. Y es esto: te amo como jamás he amado a nadie. No
+                    de la manera en que se ama una canción bonita o un recuerdo dorado, sino de esa otra manera, la que
+                    va más hondo —la que duele un poco porque es demasiado real para no dolerle algo al corazón.</p>
+                <p class="carta-p">Y simplemente no puedo dejar de pensar en ti. En todo momento. En todo lugar. Me
+                    visitas en la mañana cuando el café humea y el mundo todavía no ha empezado a pedir nada. Me visitas
+                    en la tarde cuando el ruido se vuelve ruido y yo solo quiero tu voz. Me visitas de noche cuando el
+                    silencio habla demasiado. Llegas de tantas maneras que ya perdí la cuenta: a veces como imagen, a
+                    veces como intuición, a veces como ese olor que de repente aparece sin origen y me regresa a algún
+                    momento tuyo, nuestro, mío-tuyo.</p>
+                <p class="carta-p">Hemos vivido de todo. Hemos reído hasta cansarnos, hemos llorado hasta quedar
+                    limpios, hemos compartido hasta lo que no tiene nombre —hasta nuestra intimidad más profunda, ese
+                    territorio donde ya no hay actuaciones ni disfraces, solo lo que somos cuando nadie más mira. Y en
+                    ese territorio nos reconocimos. Nos elegimos. Una y otra vez.</p>
+                <p class="carta-p">Parece ser que no queda nada más por descubrir. Esa sensación de estrenar cada cosa,
+                    de abrir una puerta y asombrarse —esa, ya vivida, ya bebida hasta el fondo— ha cedido el paso a algo
+                    diferente, algo más sereno y más sólido: la certeza. Tú y yo somos como una casa ya establecida. No
+                    una casa nueva que huele a pintura y promesas, sino una con historia en las paredes y raíces en el
+                    suelo. Un hogar.</p>
+                <p class="carta-p"
+                    style="font-weight: 600; color: var(--purple-light); text-align: center; font-size: 1.15rem; margin-top: 20px;">
+                    Nuestro hogar. 💜</p>
+            </div>
+        </section>
+
+        <section id="flores" class="seccion-flores fade-in-section">
+            <h2>Todas las flores del mundo son para tí 💐</h2>
+            <p class="carta-p" style="text-align: center; color: var(--text-secondary);">Un pequeño jardín virtual hecho
+                con todo mi amor, solo para ti, mi niña preciosa.</p>
+
+            <div
+                style="display:flex; justify-content:center; align-items:flex-end; gap:8px; margin: 22px auto 6px; flex-wrap:wrap; max-width:420px;">
+                <div style="text-align:center;opacity:0.92">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 60" width="38" height="48">
+                        <path d="M24 58 Q22 45 24 35" stroke="#4a7c40" stroke-width="2.5" fill="none"
+                            stroke-linecap="round" />
+                        <path d="M24 48 Q14 43 13 36 Q20 38 24 45" fill="#5a9a50" opacity="0.85" />
+                        <ellipse cx="18" cy="24" rx="7" ry="13" fill="#f0f0f5" transform="rotate(-18,18,24)"
+                            opacity="0.92" />
+                        <ellipse cx="30" cy="24" rx="7" ry="13" fill="#f0f0f5" transform="rotate(18,30,24)"
+                            opacity="0.92" />
+                        <ellipse cx="24" cy="21" rx="6" ry="14" fill="#ffffff" opacity="0.97" />
+                        <ellipse cx="21" cy="16" rx="2" ry="5" fill="rgba(255,255,255,0.35)"
+                            transform="rotate(-10,21,16)" />
+                    </svg>
+                    <span
+                        style="font-size:0.6rem;color:rgba(255,255,255,0.6);display:block;font-family:'Montserrat',sans-serif">Tulipán</span>
+                </div>
+                <div style="text-align:center;opacity:0.92">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 60" width="42" height="52">
+                        <path d="M24 58 Q23 46 24 36" stroke="#4a7c40" stroke-width="2.5" fill="none"
+                            stroke-linecap="round" />
+                        <path d="M24 50 Q34 46 36 38 Q28 40 24 48" fill="#5a9a50" opacity="0.85" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f5e030" opacity="0.9"
+                            transform="rotate(0,24,24)" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f5e030" opacity="0.9"
+                            transform="rotate(25.7,24,24)" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f5e030" opacity="0.9"
+                            transform="rotate(51.4,24,24)" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f5e030" opacity="0.9"
+                            transform="rotate(77.1,24,24)" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f5e030" opacity="0.9"
+                            transform="rotate(102.8,24,24)" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f5e030" opacity="0.9"
+                            transform="rotate(128.5,24,24)" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f5e030" opacity="0.9"
+                            transform="rotate(154.2,24,24)" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f5e030" opacity="0.9"
+                            transform="rotate(180,24,24)" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f5e030" opacity="0.9"
+                            transform="rotate(205.7,24,24)" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f5e030" opacity="0.9"
+                            transform="rotate(231.4,24,24)" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f5e030" opacity="0.9"
+                            transform="rotate(257.1,24,24)" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f5e030" opacity="0.9"
+                            transform="rotate(282.8,24,24)" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f5e030" opacity="0.9"
+                            transform="rotate(308.5,24,24)" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f5e030" opacity="0.9"
+                            transform="rotate(334.2,24,24)" />
+                        <ellipse cx="24" cy="14" rx="2.2" ry="7" fill="#fded70" opacity="0.85"
+                            transform="rotate(13,24,24)" />
+                        <ellipse cx="24" cy="14" rx="2.2" ry="7" fill="#fded70" opacity="0.85"
+                            transform="rotate(49,24,24)" />
+                        <ellipse cx="24" cy="14" rx="2.2" ry="7" fill="#fded70" opacity="0.85"
+                            transform="rotate(85,24,24)" />
+                        <ellipse cx="24" cy="14" rx="2.2" ry="7" fill="#fded70" opacity="0.85"
+                            transform="rotate(121,24,24)" />
+                        <ellipse cx="24" cy="14" rx="2.2" ry="7" fill="#fded70" opacity="0.85"
+                            transform="rotate(157,24,24)" />
+                        <ellipse cx="24" cy="14" rx="2.2" ry="7" fill="#fded70" opacity="0.85"
+                            transform="rotate(193,24,24)" />
+                        <ellipse cx="24" cy="14" rx="2.2" ry="7" fill="#fded70" opacity="0.85"
+                            transform="rotate(229,24,24)" />
+                        <ellipse cx="24" cy="14" rx="2.2" ry="7" fill="#fded70" opacity="0.85"
+                            transform="rotate(265,24,24)" />
+                        <ellipse cx="24" cy="14" rx="2.2" ry="7" fill="#fded70" opacity="0.85"
+                            transform="rotate(301,24,24)" />
+                        <ellipse cx="24" cy="14" rx="2.2" ry="7" fill="#fded70" opacity="0.85"
+                            transform="rotate(337,24,24)" />
+                        <circle cx="24" cy="24" r="6.5" fill="#2a1a0a" />
+                        <circle cx="24" cy="24" r="4.5" fill="#3d2510" />
+                        <circle cx="24" cy="24" r="2.5" fill="#5c3a1e" />
+                        <circle cx="22" cy="22" r="1" fill="rgba(255,255,255,0.3)" />
+                    </svg>
+                    <span
+                        style="font-size:0.6rem;color:rgba(255,255,255,0.6);display:block;font-family:'Montserrat',sans-serif">Gerbera</span>
+                </div>
+                <div style="text-align:center;opacity:0.92">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 62" width="38" height="50">
+                        <defs>
+                            <radialGradient id="lgpurp" cx="50%" cy="30%" r="70%">
+                                <stop offset="0%" stop-color="#c77dff" stop-opacity="0.95" />
+                                <stop offset="60%" stop-color="#9d4edd" stop-opacity="0.95" />
+                                <stop offset="100%" stop-color="#5a189a" stop-opacity="1" />
+                            </radialGradient>
+                            <radialGradient id="lgpurpIn" cx="50%" cy="35%" r="65%">
+                                <stop offset="0%" stop-color="#9d4edd" stop-opacity="0.95" />
+                                <stop offset="100%" stop-color="#5a189a" stop-opacity="1" />
+                            </radialGradient>
+                        </defs>
+                        <path d="M24 60 Q22 48 24 40" stroke="#4a7c40" stroke-width="2.5" fill="none"
+                            stroke-linecap="round" />
+                        <path d="M24 52 Q14 46 12 36 Q20 39 24 50" fill="#5a9a50" opacity="0.85" />
+                        <path d="M24 48 Q32 43 35 34 Q28 38 24 46" fill="#4d8844" opacity="0.7" />
+                        <!-- Pétalos exteriores -->
+                        <path d="M0,-3 C-5,-10 -7,-20 -4,-28 C-2,-32 2,-32 4,-28 C7,-20 5,-10 0,-3Z" fill="url(#lgpurp)"
+                            opacity="0.92" transform="translate(24,28) rotate(0)" />
+                        <path d="M0,-3 C-5,-10 -7,-20 -4,-28 C-2,-32 2,-32 4,-28 C7,-20 5,-10 0,-3Z" fill="url(#lgpurp)"
+                            opacity="0.92" transform="translate(24,28) rotate(120)" />
+                        <path d="M0,-3 C-5,-10 -7,-20 -4,-28 C-2,-32 2,-32 4,-28 C7,-20 5,-10 0,-3Z" fill="url(#lgpurp)"
+                            opacity="0.92" transform="translate(24,28) rotate(240)" />
+                        <!-- Pétalos interiores -->
+                        <path d="M0,-3 C-4.5,-9 -6,-18 -3.5,-25 C-1.5,-29 1.5,-29 3.5,-25 C6,-18 4.5,-9 0,-3Z"
+                            fill="url(#lgpurpIn)" opacity="0.88" transform="translate(24,28) rotate(60)" />
+                        <path d="M0,-3 C-4.5,-9 -6,-18 -3.5,-25 C-1.5,-29 1.5,-29 3.5,-25 C6,-18 4.5,-9 0,-3Z"
+                            fill="url(#lgpurpIn)" opacity="0.88" transform="translate(24,28) rotate(180)" />
+                        <path d="M0,-3 C-4.5,-9 -6,-18 -3.5,-25 C-1.5,-29 1.5,-29 3.5,-25 C6,-18 4.5,-9 0,-3Z"
+                            fill="url(#lgpurpIn)" opacity="0.88" transform="translate(24,28) rotate(300)" />
+                        <!-- Estambres -->
+                        <line x1="0" y1="0" x2="0" y2="-11" stroke="#7a9a40" stroke-width="0.8" stroke-linecap="round"
+                            transform="translate(24,28) rotate(15)" />
+                        <ellipse cx="0" cy="-12" rx="1.3" ry="2" fill="#c8841a"
+                            transform="translate(24,28) rotate(15)" />
+                        <line x1="0" y1="0" x2="0" y2="-11" stroke="#7a9a40" stroke-width="0.8" stroke-linecap="round"
+                            transform="translate(24,28) rotate(75)" />
+                        <ellipse cx="0" cy="-12" rx="1.3" ry="2" fill="#c8841a"
+                            transform="translate(24,28) rotate(75)" />
+                        <line x1="0" y1="0" x2="0" y2="-11" stroke="#7a9a40" stroke-width="0.8" stroke-linecap="round"
+                            transform="translate(24,28) rotate(135)" />
+                        <ellipse cx="0" cy="-12" rx="1.3" ry="2" fill="#c8841a"
+                            transform="translate(24,28) rotate(135)" />
+                        <line x1="0" y1="0" x2="0" y2="-11" stroke="#7a9a40" stroke-width="0.8" stroke-linecap="round"
+                            transform="translate(24,28) rotate(195)" />
+                        <ellipse cx="0" cy="-12" rx="1.3" ry="2" fill="#c8841a"
+                            transform="translate(24,28) rotate(195)" />
+                        <line x1="0" y1="0" x2="0" y2="-11" stroke="#7a9a40" stroke-width="0.8" stroke-linecap="round"
+                            transform="translate(24,28) rotate(255)" />
+                        <ellipse cx="0" cy="-12" rx="1.3" ry="2" fill="#c8841a"
+                            transform="translate(24,28) rotate(255)" />
+                        <line x1="0" y1="0" x2="0" y2="-11" stroke="#7a9a40" stroke-width="0.8" stroke-linecap="round"
+                            transform="translate(24,28) rotate(315)" />
+                        <ellipse cx="0" cy="-12" rx="1.3" ry="2" fill="#c8841a"
+                            transform="translate(24,28) rotate(315)" />
+                        <circle cx="24" cy="28" r="2.2" fill="#5a8a3a" opacity="0.6" />
+                    </svg>
+                    <span
+                        style="font-size:0.6rem;color:rgba(255,255,255,0.6);display:block;font-family:'Montserrat',sans-serif">Lirio</span>
+                </div>
+                <div style="text-align:center;opacity:0.92">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 60" width="36" height="46">
+                        <defs>
+                            <radialGradient id="tgpur2" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#c077ff" />
+                                <stop offset="100%" stop-color="#6a0dad" />
+                            </radialGradient>
+                        </defs>
+                        <path d="M24 58 Q22 45 24 35" stroke="#4a7c40" stroke-width="2.5" fill="none"
+                            stroke-linecap="round" />
+                        <path d="M24 48 Q14 43 13 36 Q20 38 24 45" fill="#5a9a50" opacity="0.85" />
+                        <ellipse cx="18" cy="24" rx="7" ry="13" fill="url(#tgpur2)" transform="rotate(-18,18,24)"
+                            opacity="0.92" />
+                        <ellipse cx="30" cy="24" rx="7" ry="13" fill="url(#tgpur2)" transform="rotate(18,30,24)"
+                            opacity="0.92" />
+                        <ellipse cx="24" cy="21" rx="6" ry="14" fill="url(#tgpur2)" opacity="0.97" />
+                        <ellipse cx="21" cy="16" rx="2" ry="5" fill="rgba(255,255,255,0.28)"
+                            transform="rotate(-10,21,16)" />
+                    </svg>
+                    <span
+                        style="font-size:0.6rem;color:rgba(255,255,255,0.6);display:block;font-family:'Montserrat',sans-serif">Tulipán</span>
+                </div>
+                <div style="text-align:center;opacity:0.92">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 60" width="40" height="50">
+                        <path d="M24 58 Q23 46 24 36" stroke="#4a7c40" stroke-width="2.5" fill="none"
+                            stroke-linecap="round" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f8f8ff" opacity="0.9"
+                            transform="rotate(0,24,24)" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f8f8ff" opacity="0.9"
+                            transform="rotate(25.7,24,24)" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f8f8ff" opacity="0.9"
+                            transform="rotate(51.4,24,24)" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f8f8ff" opacity="0.9"
+                            transform="rotate(77.1,24,24)" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f8f8ff" opacity="0.9"
+                            transform="rotate(102.8,24,24)" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f8f8ff" opacity="0.9"
+                            transform="rotate(128.5,24,24)" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f8f8ff" opacity="0.9"
+                            transform="rotate(154.2,24,24)" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f8f8ff" opacity="0.9"
+                            transform="rotate(180,24,24)" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f8f8ff" opacity="0.9"
+                            transform="rotate(205.7,24,24)" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f8f8ff" opacity="0.9"
+                            transform="rotate(231.4,24,24)" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f8f8ff" opacity="0.9"
+                            transform="rotate(257.1,24,24)" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f8f8ff" opacity="0.9"
+                            transform="rotate(282.8,24,24)" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f8f8ff" opacity="0.9"
+                            transform="rotate(308.5,24,24)" />
+                        <ellipse cx="24" cy="10" rx="3.5" ry="10" fill="#f8f8ff" opacity="0.9"
+                            transform="rotate(334.2,24,24)" />
+                        <circle cx="24" cy="24" r="6.5" fill="#b8860b" />
+                        <circle cx="24" cy="24" r="4" fill="#daa520" />
+                        <circle cx="22" cy="22" r="1" fill="rgba(255,255,255,0.4)" />
+                    </svg>
+                    <span
+                        style="font-size:0.6rem;color:rgba(255,255,255,0.6);display:block;font-family:'Montserrat',sans-serif">Gerbera</span>
+                </div>
+                <div style="text-align:center;opacity:0.92">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 62" width="36" height="48">
+                        <defs>
+                            <radialGradient id="lgyell" cx="50%" cy="30%" r="70%">
+                                <stop offset="0%" stop-color="#fff09e" stop-opacity="0.95" />
+                                <stop offset="60%" stop-color="#f5e642" stop-opacity="0.95" />
+                                <stop offset="100%" stop-color="#c8a800" stop-opacity="1" />
+                            </radialGradient>
+                            <radialGradient id="lgyellIn" cx="50%" cy="35%" r="65%">
+                                <stop offset="0%" stop-color="#f5e642" stop-opacity="0.95" />
+                                <stop offset="100%" stop-color="#c8a800" stop-opacity="1" />
+                            </radialGradient>
+                        </defs>
+                        <path d="M24 60 Q22 48 24 40" stroke="#4a7c40" stroke-width="2.5" fill="none"
+                            stroke-linecap="round" />
+                        <path d="M24 52 Q14 46 12 36 Q20 39 24 50" fill="#5a9a50" opacity="0.85" />
+                        <path d="M24 48 Q32 43 35 34 Q28 38 24 46" fill="#4d8844" opacity="0.7" />
+                        <!-- Pétalos exteriores -->
+                        <path d="M0,-3 C-5,-10 -7,-20 -4,-28 C-2,-32 2,-32 4,-28 C7,-20 5,-10 0,-3Z" fill="url(#lgyell)"
+                            opacity="0.92" transform="translate(24,28) rotate(0)" />
+                        <path d="M0,-3 C-5,-10 -7,-20 -4,-28 C-2,-32 2,-32 4,-28 C7,-20 5,-10 0,-3Z" fill="url(#lgyell)"
+                            opacity="0.92" transform="translate(24,28) rotate(120)" />
+                        <path d="M0,-3 C-5,-10 -7,-20 -4,-28 C-2,-32 2,-32 4,-28 C7,-20 5,-10 0,-3Z" fill="url(#lgyell)"
+                            opacity="0.92" transform="translate(24,28) rotate(240)" />
+                        <!-- Pétalos interiores -->
+                        <path d="M0,-3 C-4.5,-9 -6,-18 -3.5,-25 C-1.5,-29 1.5,-29 3.5,-25 C6,-18 4.5,-9 0,-3Z"
+                            fill="url(#lgyellIn)" opacity="0.88" transform="translate(24,28) rotate(60)" />
+                        <path d="M0,-3 C-4.5,-9 -6,-18 -3.5,-25 C-1.5,-29 1.5,-29 3.5,-25 C6,-18 4.5,-9 0,-3Z"
+                            fill="url(#lgyellIn)" opacity="0.88" transform="translate(24,28) rotate(180)" />
+                        <path d="M0,-3 C-4.5,-9 -6,-18 -3.5,-25 C-1.5,-29 1.5,-29 3.5,-25 C6,-18 4.5,-9 0,-3Z"
+                            fill="url(#lgyellIn)" opacity="0.88" transform="translate(24,28) rotate(300)" />
+                        <!-- Estambres -->
+                        <line x1="0" y1="0" x2="0" y2="-11" stroke="#7a9a40" stroke-width="0.8" stroke-linecap="round"
+                            transform="translate(24,28) rotate(15)" />
+                        <ellipse cx="0" cy="-12" rx="1.3" ry="2" fill="#c8841a"
+                            transform="translate(24,28) rotate(15)" />
+                        <line x1="0" y1="0" x2="0" y2="-11" stroke="#7a9a40" stroke-width="0.8" stroke-linecap="round"
+                            transform="translate(24,28) rotate(75)" />
+                        <ellipse cx="0" cy="-12" rx="1.3" ry="2" fill="#c8841a"
+                            transform="translate(24,28) rotate(75)" />
+                        <line x1="0" y1="0" x2="0" y2="-11" stroke="#7a9a40" stroke-width="0.8" stroke-linecap="round"
+                            transform="translate(24,28) rotate(135)" />
+                        <ellipse cx="0" cy="-12" rx="1.3" ry="2" fill="#c8841a"
+                            transform="translate(24,28) rotate(135)" />
+                        <line x1="0" y1="0" x2="0" y2="-11" stroke="#7a9a40" stroke-width="0.8" stroke-linecap="round"
+                            transform="translate(24,28) rotate(195)" />
+                        <ellipse cx="0" cy="-12" rx="1.3" ry="2" fill="#c8841a"
+                            transform="translate(24,28) rotate(195)" />
+                        <line x1="0" y1="0" x2="0" y2="-11" stroke="#7a9a40" stroke-width="0.8" stroke-linecap="round"
+                            transform="translate(24,28) rotate(255)" />
+                        <ellipse cx="0" cy="-12" rx="1.3" ry="2" fill="#c8841a"
+                            transform="translate(24,28) rotate(255)" />
+                        <line x1="0" y1="0" x2="0" y2="-11" stroke="#7a9a40" stroke-width="0.8" stroke-linecap="round"
+                            transform="translate(24,28) rotate(315)" />
+                        <ellipse cx="0" cy="-12" rx="1.3" ry="2" fill="#c8841a"
+                            transform="translate(24,28) rotate(315)" />
+                        <circle cx="24" cy="28" r="2.2" fill="#5a8a3a" opacity="0.6" />
+                    </svg>
+                    <span
+                        style="font-size:0.6rem;color:rgba(255,255,255,0.6);display:block;font-family:'Montserrat',sans-serif">Lirio</span>
+                </div>
+            </div>
+
+            <button class="btn-flores" onclick="hacerLloverFlores()">🌸 Hacer Llover Flores 🌸</button>
+        </section>
+
+        <section id="futuro" class="fade-in-section">
+            <h2>El futuro</h2>
+            <div class="carta-contenido">
+                <p class="carta-p">En el futuro estamos nosotros dos, solitos, sin nadie más. Lejos del ruido, lejos de
+                    todo aquello que alguna vez intentó rompernos o hacernos dudar — lejos de las voces que no supieron
+                    entender lo que teníamos, de las tormentas que pasamos y que, al final, solo nos hicieron más
+                    fuertes. Solo tú y yo, construyendo esa vida que tantas veces imaginamos entre desvelos, abrazos
+                    robados y sueños compartidos en voz baja, como si tuviéramos miedo de que el mundo los escuchara
+                    antes de que fueran realidad.</p>
+                <p class="carta-p">Y quizás no estemos tan solos… porque junto a nosotros corre una ñoñita tan boñita
+                    como tú, con sus pasos pequeños y su risa que suena como agua sobre piedras. Tiene tus mismos ojitos
+                    hermosos — esa miradita que me derriten el corazón cada vez que la veo, igual que me lo derritieron
+                    los tuyos la primera vez. Lleva tu precioso nombre: Renata. Y cada vez que nos llama "papá" y
+                    "mamá", el mundo entero parece detenerse, aunque sea por un instante, como si el tiempo mismo
+                    quisiera quedarse a ver algo tan hermoso.</p>
+                <p class="carta-p">Vivimos en una casita bonita, de esas que se sienten cálidas apenas cruzas la puerta
+                    — donde el olor a café y a tierra mojada se mezclan por las mañanas, y donde cada rincón guarda algo
+                    nuestro. Tiene un jardín lleno de vida: florecitas que se mueven con el viento como si bailaran una
+                    canción que solo ellas escuchan, y pequeñas huellitas por todas partes — porque tenemos muchos
+                    chihuahuitas traviesos, gatitos curiosos que se suben a donde no deben, y cotorritas escandalosas
+                    que llenan la casa de ruido, de color y de esa alegría desordenada que hace que un hogar se sienta
+                    vivo.</p>
+                <p class="carta-p">Las tardes son tranquilas con ese silencio bueno, el que no incomoda sino que abraza.
+                    A veces tú riegas las plantitas mientras yo te observo desde adentro, sonriendo sin decir nada,
+                    pensando en lo increíble que es haberte encontrado — en lo mucho que tuvo que pasar para que
+                    nuestros caminos se cruzaran exactamente así, exactamente cuando se cruzaron. Otras veces estamos
+                    los tres abrazados en el sillón mientras afuera llueve despacito, con ese sonido suave que convierte
+                    cualquier lugar en refugio, y nuestros animalitos dormitan cerca, calentitos, como si supieran que
+                    ahí, en ese instante, todo está bien.</p>
+                <p class="carta-p">Todo es muy feliz. Somos solo nosotros y nadie más. Sin prisas. Sin miedo. Sin
+                    despedidas.</p>
+                <p class="carta-p">Y aunque el tiempo siga avanzando, aunque el mundo cambie mil veces y los años nos
+                    vayan cambiando a nosotros también… yo seguiría escogiendo ese futuro contigo. Una y otra vez. Sin
+                    dudarlo. Sin mirar atrás.</p>
+                <p class="carta-p"
+                    style="font-weight: 600; color: var(--purple-light); text-align: center; font-size: 1.15rem; margin-top: 30px;">
+                    Porque tú eres el futuro que vale la pena esperar, y también el presente que ya no quiero soltar. 💜
+                </p>
+            </div>
+        </section>
+
+        <section id="razones" class="fade-in-section">
+            <h2>Razones por las que te amo</h2>
+            <div style="text-align: center; margin-top: 20px;">
+                <button class="btn-extraname" style="font-size: 1rem; padding: 15px 30px;" onclick="mostrarRazon()">Dime por qué me amas 💖</button>
+                <div id="razon-texto" class="carta-p" style="margin-top: 30px; font-style: italic; min-height: 80px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 1.15rem; color: var(--purple-light);">
+                    (Haz clic en el botón para descubrirlo)
+                </div>
+            </div>
+        </section>
+
+        <section id="cupones" class="fade-in-section">
+            <h2>Talonario de Amor</h2>
+            <p class="carta-p" style="text-align: center; font-size: 0.85rem; color: var(--text-secondary);">¡Canjeables
+                cuando quieras, donde quieras, solo conmigo!</p>
+            <div class="grid-cupones">
+                <div class="cupon" onclick="canjearCupon(this, 'Un Ramen Elote calientito y delicioso')">
+                    <span class="cupon-valido">Vale por:</span>
+                    <div class="cupon-titulo">🍜 Ir a por un Ramen Elote</div>
+                    <button class="cupon-btn">¡Lo quiero!</button>
+                </div>
+                <div class="cupon" onclick="canjearCupon(this, 'Ir al auditorio a sentarnos juntitos')">
+                    <span class="cupon-valido">Vale por:</span>
+                    <div class="cupon-titulo">🏟️ Ir al auditorio a sentarnos juntos</div>
+                    <button class="cupon-btn">¡Lo quiero!</button>
+                </div>
+                <div class="cupon" onclick="canjearCupon(this, 'Una vueltecita a la unidad deportiva')">
+                    <span class="cupon-valido">Vale por:</span>
+                    <div class="cupon-titulo">⚽ Ir a la unidad deportiva</div>
+                    <button class="cupon-btn">¡Lo quiero!</button>
+                </div>
+                <div class="cupon" onclick="canjearCupon(this, 'Ir al cine juntos a ver tu peli favorita')">
+                    <span class="cupon-valido">Vale por:</span>
+                    <div class="cupon-titulo">🍿 Ir al cine juntitos</div>
+                    <button class="cupon-btn">¡Lo quiero!</button>
+                </div>
+                <div class="cupon" onclick="canjearCupon(this, 'Una coquita bien fría compartida')">
+                    <span class="cupon-valido">Vale por:</span>
+                    <div class="cupon-titulo">🥤 Una coquita bien fría</div>
+                    <button class="cupon-btn">¡Lo quiero!</button>
+                </div>
+                <div class="cupon" onclick="canjearCupon(this, 'Unos Doritos Flaming Hot')">
+                    <span class="cupon-valido">Vale por:</span>
+                    <div class="cupon-titulo">🔥 Unos Doritos Flaming Hot</div>
+                    <button class="cupon-btn">¡Lo quiero!</button>
+                </div>
+                <div class="cupon" onclick="canjearCupon(this, 'El BonIce del sabor que tú elijas')">
+                    <span class="cupon-valido">Vale por:</span>
+                    <div class="cupon-titulo">🧊 Un BonIce rico</div>
+                    <button class="cupon-btn">¡Lo quiero!</button>
+                </div>
+                <div class="cupon" onclick="canjearCupon(this, 'Una tardecita coloreando juntos')">
+                    <span class="cupon-valido">Vale por:</span>
+                    <div class="cupon-titulo">🎨 Una tarde coloreando</div>
+                    <button class="cupon-btn">¡Lo quiero!</button>
+                </div>
+                <div class="cupon" onclick="canjearCupon(this, 'Un heladito artesanal para mi niña')">
+                    <span class="cupon-valido">Vale por:</span>
+                    <div class="cupon-titulo">🍨 Un heladito delicioso</div>
+                    <button class="cupon-btn">¡Lo quiero!</button>
+                </div>
+                <div class="cupon" onclick="canjearCupon(this, 'Un masajito, piojito y muchos mimos')">
+                    <span class="cupon-valido">Vale por:</span>
+                    <div class="cupon-titulo">💆 Mimos y masaje infinitos</div>
+                    <button class="cupon-btn">¡Lo quiero!</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="boton-container">
+            <button class="btn-extraname" onclick="abrirModalExtrañame()">Haz clic cuando me extrañes 💜</button>
+        </div>
+
+        <div class="espacio-final">
+            <div style="text-align: center; margin-top: 50px;">
+                <button class="btn-secreto-obvio" onclick="abrirModalPassword()">🔐 Revelar nuestro futuro</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="reproductor-flotante">
+        <div class="reproductor-header">
+            <div class="disco" id="reproductor-disco"></div>
+            <div class="track-info">
+                <div class="track-name" id="track-titulo">Cargando...</div>
+                <div class="track-artist" id="track-artista">Artista</div>
+            </div>
+        </div>
+        <div class="controles">
+            <button class="btn-ctrl" onclick="abrirModalPlaylist()" style="font-size: 1.1rem; margin-right: 8px;">📜</button>
+            <button class="btn-ctrl" onclick="cancionAnterior()"> ⏮️ </button>
+            <button class="btn-ctrl btn-play" id="btn-play-pause" onclick="togglePlayPause()">▶️</button>
+            <button class="btn-ctrl" onclick="siguienteCancion()"> ⏭️ </button>
+        </div>
+        <div class="progress-bar-container" id="progreso-contenedor" onclick="adelantarCancion(event)">
+            <div class="progress-bar" id="progreso-barra"></div>
+        </div>
+    </div>
+    <audio id="global-audio-player" preload="auto"></audio>
+
+    <div class="lightbox" id="global-lightbox" onclick="cerrarLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <button class="btn-close-lightbox" onclick="cerrarLightbox()">×</button>
+            <button class="btn-lightbox-nav btn-prev" onclick="cambiarImagen(event, -1)">&#10094;</button>
+            <img src="" alt="Visualizador" class="lightbox-img" id="lightbox-img">
+            <button class="btn-lightbox-nav btn-next" onclick="cambiarImagen(event, 1)">&#10095;</button>
+            <div class="lightbox-caption" id="lightbox-caption">Pie de foto</div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-extraname">
+        <div class="modal-content">
+            <div class="modal-heart">💜</div>
+            <div class="modal-text" id="modal-mensaje-texto">"Mensaje secreto..."</div>
+            <audio id="modal-audio-player" controls class="audio-player-modal"></audio>
+
+            <div class="modal-botones">
+                <button class="btn-cambiar-audio" onclick="reproducirAudioAleatorio()">🔀 Escuchar otro
+                    mensajito</button>
+                <button class="btn-close" onclick="cerrarModalExtrañame()">Volver a la carta</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-password">
+        <div class="modal-content" style="max-width: 400px;">
+            <div class="modal-heart">🔐</div>
+            <div class="modal-text carta-p" style="text-align: center; font-size: 1.05rem; margin-bottom: 15px;">
+                ¿Cual fué el primer apodo de cariño que te puse por tus lindos ojitos grandes q me encantan tanto?
+            </div>
+            <input type="text" id="input-secreto" class="input-password" placeholder="Escribe aquí tu respuesta..." autocomplete="off">
+            <div id="error-password" style="color: #ff4d4d; font-size: 0.85rem; margin-top: 10px; display: none;">Respuesta incorrecta... Vuelve a intentarlo, mi amor. 💜</div>
+            <div class="modal-botones" style="margin-top: 20px;">
+                <button class="btn-extraname" style="width: 100%; padding: 12px; margin-bottom: 10px;" onclick="verificarPassword()">Desbloquear Secreto</button>
+                <button class="btn-close" onclick="cerrarModalPassword()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-playlist">
+        <div class="modal-content" style="max-width: 500px; max-height: 80vh; display: flex; flex-direction: column;">
+            <div class="modal-heart">🎧</div>
+            <h2 style="color: var(--purple-light); font-family: 'Playfair Display', serif; text-align: center; margin-bottom: 15px;">Nuestra Playlist</h2>
+            <div id="playlist-lista" style="overflow-y: auto; flex-grow: 1; text-align: left; padding: 10px; border-top: 1px solid rgba(157, 78, 221, 0.2); border-bottom: 1px solid rgba(157, 78, 221, 0.2);">
+                <!-- Aquí se generará la lista dinámicamente -->
+            </div>
+            
+            <div class="modal-botones" style="margin-top: 15px;">
+                <button class="btn-close" onclick="cerrarModalPlaylist()">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-secreto">
+        <div class="modal-content" style="max-width: 600px; max-height: 90vh; overflow-y: auto;">
+            <div class="modal-heart">👨‍👩‍👧‍👦</div>
+            <img src="images/futuro_familia.jpg" alt="Nuestro futuro" style="width: 100%; border-radius: 15px; margin-bottom: 20px; border: 2px solid var(--accent-purple); box-shadow: 0 5px 20px var(--accent-purple-glow);">
+            <div class="modal-text carta-p" style="text-align: justify; font-size: 0.95rem;">
+                Contigo todo cobra sentido, como cuando después de días nublados aparece el sol y uno recuerda por qué el mundo es tan hermoso. Todo es profundamente más colorido a tu lado — como si antes de ti yo hubiera vivido en acuarelas pálidas, y tú hubieras llegado a pintarme el mundo con colores que ni siquiera sabía que existían. Eres mi complemento, la pieza que encaja donde todo lo demás sobraba o faltaba, todo aquello que me hace tan feliz y me da aliento para seguir, para crecer, para ser mejor. Porque tú me brindas todo: llenas de dicha y buena nueva mi alma como lluvia sobre tierra seca, me completas de esa manera silenciosa y profunda que no necesita explicación, y siempre, siempre, me llenas de calma — esa calma que no se aprende ni se busca, que simplemente llega cuando estás tú.<br><br>
+                Y es que hay un futuro que llevo dibujado en el corazón con tu nombre escrito en cada esquina. Un futuro en el que te tomo de la mano frente a todos los que amamos y te digo "sí, quiero" — porque quiero, con toda la certeza con la que el mar quiere volver a la orilla. Me quiero casar contigo y hacer realidad nuestros sueños, esos que construimos entre susurros y risas, entre noches largas y mañanas lentas. Quiero que sean nuestros, para siempre, sin prisa y sin miedo.<br><br>
+                Y quizás un día, entre todo ese amor que ya de por sí nos desborda, llegue él: Yusuel — nuestro hijito, con tus ojos o los míos, con tu risa o la mía, pero con el corazón de los dos. Y después ella: Renata — nuestra linda hijita, tan preciosa como tú, tan llena de luz que el cuarto se le ilumina cuando entra. Frutos de este amor eterno que empezó hace ocho meses y que yo siento que existió siempre, como si el universo lo hubiera preparado mucho antes de que nosotros lo supiéramos.<br><br>
+                <div style="text-align: center; font-weight: bold; color: var(--purple-light); margin-top: 15px;">Ese es el futuro que quiero. El único que quiero. El que tiene tu nombre en cada página. 💜</div>
+            </div>
+            
+            <div class="modal-botones">
+                <button class="btn-close" onclick="cerrarSecreto()">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
